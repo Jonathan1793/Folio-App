@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <title>Folio</title>
+  </head>
+  <body>
+    <div class="theme-panel open">
+      <div class="theme-body">
+        <span>Change Theme</span>
+        <div class="btn-group">
+          <button data-toggle="light" class="switcher-btn">Light</button>
+          <button data-toggle="dark" class="switcher-btn">Dark</button>
+        </div>
+        <button class="theme-tab">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      </div>
+    </div>
+    <main class="side-wrapper">
+      <header class="side-header">
+        <nav class="navbar">
+          <div class="brand-logo">
+            <a href="/"><h2>Folio.</h2></a>
+          </div>
+          <div class="navbar-nav">
+            <ul class="ul-default-none main-menu">
+              <li class="nav-item">Home</li>
+              <li class="nav-item" data-open="about">About Me</li>
+              <li class="nav-item" data-open="contact">Contact</li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Hero Section  -->
+      <section class="hero-bg">
+        <div class="container">
+          <div class="hero-content">
+            <div class="code-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h2 class="header-lg">Code. Eat. Sleep</h2>
+            <div class="sub-header">
+              I create meaningful solution for your brands and products.
+              <br />
+              Give your customer the best experience possible.
+            </div>
+            <div class="btn btn-primary round-pill">
+              <a href="#" data-open="contact">let's talk now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio-section">
+        <div class="search-container container">
+          <label for="search">
+            <input
+              class="search-input"
+              placeholder="search"
+              autocomplete="off"
+              type="text"
+              name="search"
+              id="search"
+            />
+            <i class="fas fa-search"></i>
+          </label>
+          <ul class="ul-default-none portfolio-filter-nav">
+            <li class="filter-link">Work</li>
+            <li class="filter-link">Web Development</li>
+            <li class="filter-link active">App Development</li>
+            <li class="filter-link">UI Design</li>
+          </ul>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-1.jpg" alt="portfolio icon" />
+              <a href="#" class="card-popup-box">
+                <div>Web Development</div>
+                <h3>Food Website</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-1.jpg" alt="portfolio icon" />
+              <a href="#" class="card-popup-box">
+                <div>Web Development</div>
+                <h3>Food Website</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-1.jpg" alt="portfolio icon" />
+              <a href="#" class="card-popup-box">
+                <div>Web Development</div>
+                <h3>Food Website</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-1.jpg" alt="portfolio icon" />
+              <a href="#" class="card-popup-box">
+                <div>Web Development</div>
+                <h3>Food Website</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-1.jpg" alt="portfolio icon" />
+              <a href="#" class="card-popup-box">
+                <div>Web Development</div>
+                <h3>Food Website</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modals -->
+      <!-- About Page Models  -->
+      <div
+        id="about"
+        class="full-site-modal page-block"
+        data-animation="zoomInOut"
+      >
+        <header class="modal-header">
+          <h3>ABOUT PAGE</h3>
+          <i class="fas fa-times" data-close></i>
+        </header>
+        <div class="modal-body">
+          <div class="img-wrapper">
+            <img src="./assets/images/img4.jpg" alt="head shot" />
+          </div>
+          <h2>Jonathan Ruiz</h2>
+          <p>text 1</p>
+          <p>text 2</p>
+          <div>
+            <div>Email Me:</div>
+            <a href="mailto:Jonathan.ruiz.1793@gmail.com"
+              >Jonathan.ruiz.1793@gmail.com</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Contact Modal  -->
+      <div
+        id="contact"
+        class="full-site-modal page-block"
+        data-animation="zoomInOut"
+      >
+        <header class="modal-header">
+          <h3>Contact Page</h3>
+          <i class="fas fa-times" data-close></i>
+        </header>
+        <div class="modal-body">
+          <div class="img-wrapper">
+            <img src="./assets/images/img4.jpg" alt="head shot" />
+          </div>
+          <h2>Jonathan Ruiz</h2>
+          <p>text 1</p>
+          <p>text 2</p>
+          <div>
+            <div>Email Me:</div>
+            <a href="mailto:Jonathan.ruiz.1793@gmail.com"
+              >Jonathan.ruiz.1793@gmail.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js//main.js"></script>
+  </body>
+</html>
