@@ -341,6 +341,7 @@ button {
   position: relative;
   margin: 0 1rem 1.5rem;
   max-width: 255px;
+  width: 100%;
 }
 .portfolio-grid .portfolio-card:hover .card-body .card-popup-box {
   bottom: 20px;

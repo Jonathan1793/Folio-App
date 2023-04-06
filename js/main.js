@@ -10,10 +10,17 @@ const activeButton = "active";
 const modalOpen = "[data-open]";
 const modalClose = "[data-close]";
 const isVisible = "is-visible";
+const dataFilter = "[data-filter]";
+const dataCards = "[data-item]";
 const root = document.documentElement;
+const openModal = document.querySelectorAll(modalOpen);
+const closeModal = document.querySelectorAll(modalClose);
 const toggleTheme = document.querySelector(themeTab);
 const switcher = document.querySelectorAll(switcherBtn);
 const currentTheme = localStorage.getItem(theme);
+const filterLink = document.querySelectorAll(dataFilter);
+const portfolioItems = document.querySelectorAll(dataCards);
+const searchBar = document.querySelector("#search");
 const setActive = (elm, selector) => {
     var _a;
     if (document.querySelector(`${selector}.${activeButton}`) !== null) {
@@ -60,8 +67,35 @@ for (const button of switcher) {
         setTheme(toggle);
     });
 }
-const openModal = document.querySelectorAll(modalOpen);
-const closeModal = document.querySelectorAll(modalClose);
+searchBar === null || searchBar === void 0 ? void 0 : searchBar.addEventListener("keyup", (event) => {
+    const inputSearchValue = event.target.value;
+    portfolioItems.forEach((card) => {
+        var _a;
+        if ((_a = card.dataset.item) === null || _a === void 0 ? void 0 : _a.includes(inputSearchValue)) {
+            card.style.display = "block";
+        }
+        else {
+            card.style.display = "none";
+        }
+    });
+});
+for (const link of filterLink) {
+    link.addEventListener("click", function () {
+        setActive(link, ".filter-link");
+        const filter = this.dataset.filter;
+        portfolioItems.forEach((card) => {
+            if (filter === "all") {
+                card.style.display = "block";
+            }
+            else if (filter === card.dataset.item) {
+                card.style.display = "block";
+            }
+            else {
+                card.style.display = "none";
+            }
+        });
+    });
+}
 for (const el of openModal) {
     el.addEventListener("click", function () {
         var _a;
