@@ -1,3 +1,61 @@
+interface cardStructure {
+  dataItemAtr: string;
+  imgSrc: string;
+  category: string;
+  title: string;
+}
+
+const dataCardsArray: cardStructure[] = [
+  {
+    dataItemAtr: "web",
+    imgSrc: "./assets/images/portfolio-1.jpg",
+    category: "Web Development",
+    title: "Food Website",
+  },
+  {
+    dataItemAtr: "web",
+    imgSrc: "./assets/images/portfolio-2.jpg",
+    category: "Web Development",
+    title: "Skate Website",
+  },
+  {
+    dataItemAtr: "web",
+    imgSrc: "./assets/images/portfolio-3.jpg",
+    category: "Web Development",
+    title: "Eating Website",
+  },
+  {
+    dataItemAtr: "ui",
+    imgSrc: "./assets/images/portfolio-4.jpg",
+    category: "UI Design",
+    title: "Cool Design",
+  },
+  {
+    dataItemAtr: "app",
+    imgSrc: "./assets/images/portfolio-5.jpg",
+    category: "App Development",
+    title: "Game App",
+  },
+  {
+    dataItemAtr: "app",
+    imgSrc: "./assets/images/portfolio-6.jpg",
+    category: "App Development",
+    title: "Gambling App",
+  },
+  {
+    dataItemAtr: "app",
+    imgSrc: "./assets/images/portfolio-7.jpg",
+    category: "App Development",
+    title: "Money App",
+  },
+  {
+    dataItemAtr: "ui",
+    imgSrc: "./assets/images/portfolio-8.jpg",
+    category: "UI Design",
+    title: "Fantastic Design",
+  },
+];
+
 //Theme Variables
 const theme: string = "theme";
 const dataTheme: string = "data-theme";
@@ -17,8 +75,6 @@ const dataCards = "[data-item]";
 /* Miscellanies Variables */
 const root = document.documentElement;
 /* Selectors part */
-const openModal: NodeList = document.querySelectorAll(modalOpen);
-const closeModal: NodeList = document.querySelectorAll(modalClose);
 /* theme */
 const toggleTheme = document.querySelector(themeTab); //gets first item with given selector
 const switcher = document.querySelectorAll(switcherBtn); //gets array of given selector
@@ -26,9 +82,10 @@ const currentTheme = localStorage.getItem(theme); //gets the variable team from 
 
 /* Portfolio */
 const filterLink = document.querySelectorAll(dataFilter);
-const portfolioItems = document.querySelectorAll<HTMLElement>(dataCards);
+
 const searchBar = document.querySelector("#search");
 //setting active class
+
 const setActive = (elm: Element, selector: string) => {
   if (document.querySelector(`${selector}.${activeButton}`) !== null) {
     document
@@ -37,6 +94,51 @@ const setActive = (elm: Element, selector: string) => {
   }
   elm.classList.add(activeButton);
 };
+
+/* generate portfolio cards dynamically */
+
+const portfolioGrid = document.querySelector(".portfolio-grid");
+
+const generateCards = (dataCardsArray: Array<cardStructure>) => {
+  for (let card of dataCardsArray) {
+    const cardContainer = document.createElement("div");
+    //creates outer div of element card
+    cardContainer.classList.add("portfolio-card");
+    cardContainer.setAttribute("data-item", card.dataItemAtr);
+    cardContainer.setAttribute("data-open", "web-1");
+    //generates card body for the card
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    const img = document.createElement("img");
+    img.setAttribute("src", card.imgSrc);
+    img.setAttribute("alt", "portfolio icon");
+
+    const cardPopUpBox = document.createElement("a");
+    cardPopUpBox.setAttribute("href", "#");
+    cardPopUpBox.classList.add("card-popup-box");
+
+    const category = document.createElement("div");
+    category.innerHTML = card.category;
+
+    const title = document.createElement("h3");
+    title.innerHTML = card.title;
+
+    cardContainer.appendChild(cardBody);
+    cardBody.appendChild(img);
+    cardBody.appendChild(cardPopUpBox);
+    cardPopUpBox.appendChild(category);
+    cardPopUpBox.appendChild(title);
+
+    portfolioGrid?.appendChild(cardContainer);
+  }
+};
+generateCards(dataCardsArray);
+
+/* Gotta create this variables below after creating the items for it to find the correct selectors */
+const openModal: NodeList = document.querySelectorAll(modalOpen);
+const closeModal: NodeList = document.querySelectorAll(modalClose);
+const portfolioItems = document.querySelectorAll<HTMLElement>(dataCards);
 
 //sets and toggles between themes
 const setTheme = (val?: string) => {
@@ -120,6 +222,19 @@ for (const el of openModal) {
 
 for (const el of closeModal) {
   el.addEventListener("click", function (this: any) {
-    this.parentElement.parentElement.classList.remove(isVisible);
+    this.parentElement.parentElement.parentElement.classList.remove(isVisible);
   });
 }
+
+/* modal */
+document.addEventListener("click", (event) => {
+  if (event.target === document.querySelector(".modal.is-visible")) {
+    document.querySelector(".modal.is-visible")?.classList.remove(isVisible);
+  }
+});
+
+document.addEventListener("keyup", (event) => {
+  if (event.key === "Escape") {
+    document.querySelector(".modal.is-visible")?.classList.remove(isVisible);
+  }
+});

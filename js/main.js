@@ -1,4 +1,54 @@
 "use strict";
+const dataCardsArray = [
+    {
+        dataItemAtr: "web",
+        imgSrc: "./assets/images/portfolio-1.jpg",
+        category: "Web Development",
+        title: "Food Website",
+    },
+    {
+        dataItemAtr: "web",
+        imgSrc: "./assets/images/portfolio-2.jpg",
+        category: "Web Development",
+        title: "Skate Website",
+    },
+    {
+        dataItemAtr: "web",
+        imgSrc: "./assets/images/portfolio-3.jpg",
+        category: "Web Development",
+        title: "Eating Website",
+    },
+    {
+        dataItemAtr: "ui",
+        imgSrc: "./assets/images/portfolio-4.jpg",
+        category: "UI Design",
+        title: "Cool Design",
+    },
+    {
+        dataItemAtr: "app",
+        imgSrc: "./assets/images/portfolio-5.jpg",
+        category: "App Development",
+        title: "Game App",
+    },
+    {
+        dataItemAtr: "app",
+        imgSrc: "./assets/images/portfolio-6.jpg",
+        category: "App Development",
+        title: "Gambling App",
+    },
+    {
+        dataItemAtr: "app",
+        imgSrc: "./assets/images/portfolio-7.jpg",
+        category: "App Development",
+        title: "Money App",
+    },
+    {
+        dataItemAtr: "ui",
+        imgSrc: "./assets/images/portfolio-8.jpg",
+        category: "UI Design",
+        title: "Fantastic Design",
+    },
+];
 const theme = "theme";
 const dataTheme = "data-theme";
 const themeTab = ".theme-tab";
@@ -13,13 +63,10 @@ const isVisible = "is-visible";
 const dataFilter = "[data-filter]";
 const dataCards = "[data-item]";
 const root = document.documentElement;
-const openModal = document.querySelectorAll(modalOpen);
-const closeModal = document.querySelectorAll(modalClose);
 const toggleTheme = document.querySelector(themeTab);
 const switcher = document.querySelectorAll(switcherBtn);
 const currentTheme = localStorage.getItem(theme);
 const filterLink = document.querySelectorAll(dataFilter);
-const portfolioItems = document.querySelectorAll(dataCards);
 const searchBar = document.querySelector("#search");
 const setActive = (elm, selector) => {
     var _a;
@@ -29,6 +76,37 @@ const setActive = (elm, selector) => {
     }
     elm.classList.add(activeButton);
 };
+const portfolioGrid = document.querySelector(".portfolio-grid");
+const generateCards = (dataCardsArray) => {
+    for (let card of dataCardsArray) {
+        const cardContainer = document.createElement("div");
+        cardContainer.classList.add("portfolio-card");
+        cardContainer.setAttribute("data-item", card.dataItemAtr);
+        cardContainer.setAttribute("data-open", "web-1");
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+        const img = document.createElement("img");
+        img.setAttribute("src", card.imgSrc);
+        img.setAttribute("alt", "portfolio icon");
+        const cardPopUpBox = document.createElement("a");
+        cardPopUpBox.setAttribute("href", "#");
+        cardPopUpBox.classList.add("card-popup-box");
+        const category = document.createElement("div");
+        category.innerHTML = card.category;
+        const title = document.createElement("h3");
+        title.innerHTML = card.title;
+        cardContainer.appendChild(cardBody);
+        cardBody.appendChild(img);
+        cardBody.appendChild(cardPopUpBox);
+        cardPopUpBox.appendChild(category);
+        cardPopUpBox.appendChild(title);
+        portfolioGrid === null || portfolioGrid === void 0 ? void 0 : portfolioGrid.appendChild(cardContainer);
+    }
+};
+generateCards(dataCardsArray);
+const openModal = document.querySelectorAll(modalOpen);
+const closeModal = document.querySelectorAll(modalClose);
+const portfolioItems = document.querySelectorAll(dataCards);
 const setTheme = (val) => {
     if (val === dark) {
         root.setAttribute(dataTheme, dark);
@@ -69,6 +147,7 @@ for (const button of switcher) {
 }
 searchBar === null || searchBar === void 0 ? void 0 : searchBar.addEventListener("keyup", (event) => {
     const inputSearchValue = event.target.value;
+    console.log(activeButton);
     portfolioItems.forEach((card) => {
         var _a;
         if ((_a = card.dataset.item) === null || _a === void 0 ? void 0 : _a.includes(inputSearchValue)) {
@@ -105,7 +184,19 @@ for (const el of openModal) {
 }
 for (const el of closeModal) {
     el.addEventListener("click", function () {
-        this.parentElement.parentElement.classList.remove(isVisible);
+        this.parentElement.parentElement.parentElement.classList.remove(isVisible);
     });
 }
+document.addEventListener("click", (event) => {
+    var _a;
+    if (event.target === document.querySelector(".modal.is-visible")) {
+        (_a = document.querySelector(".modal.is-visible")) === null || _a === void 0 ? void 0 : _a.classList.remove(isVisible);
+    }
+});
+document.addEventListener("keyup", (event) => {
+    var _a;
+    if (event.key === "Escape") {
+        (_a = document.querySelector(".modal.is-visible")) === null || _a === void 0 ? void 0 : _a.classList.remove(isVisible);
+    }
+});
 //# sourceMappingURL=main.js.map
