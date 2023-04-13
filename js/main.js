@@ -5,48 +5,56 @@ const dataCardsArray = [
         imgSrc: "./assets/images/portfolio-1.jpg",
         category: "Web Development",
         title: "Food Website",
+        modalId: "web-1",
     },
     {
         dataItemAtr: "web",
         imgSrc: "./assets/images/portfolio-2.jpg",
         category: "Web Development",
         title: "Skate Website",
+        modalId: "web-2",
     },
     {
         dataItemAtr: "web",
         imgSrc: "./assets/images/portfolio-3.jpg",
         category: "Web Development",
         title: "Eating Website",
+        modalId: "web-3",
     },
     {
         dataItemAtr: "ui",
         imgSrc: "./assets/images/portfolio-4.jpg",
         category: "UI Design",
         title: "Cool Design",
+        modalId: "ui-1",
     },
     {
         dataItemAtr: "app",
         imgSrc: "./assets/images/portfolio-5.jpg",
         category: "App Development",
         title: "Game App",
+        modalId: "app-1",
     },
     {
         dataItemAtr: "app",
         imgSrc: "./assets/images/portfolio-6.jpg",
         category: "App Development",
         title: "Gambling App",
+        modalId: "app-2",
     },
     {
         dataItemAtr: "app",
         imgSrc: "./assets/images/portfolio-7.jpg",
         category: "App Development",
         title: "Money App",
+        modalId: "app-3",
     },
     {
         dataItemAtr: "ui",
         imgSrc: "./assets/images/portfolio-8.jpg",
         category: "UI Design",
         title: "Fantastic Design",
+        modalId: "ui-2",
     },
 ];
 const theme = "theme";
@@ -62,11 +70,13 @@ const modalClose = "[data-close]";
 const isVisible = "is-visible";
 const dataFilter = "[data-filter]";
 const dataCards = "[data-item]";
+const modalArrayVisited = [];
 const root = document.documentElement;
 const toggleTheme = document.querySelector(themeTab);
 const switcher = document.querySelectorAll(switcherBtn);
 const currentTheme = localStorage.getItem(theme);
 const filterLink = document.querySelectorAll(dataFilter);
+let closeModal = document.querySelectorAll(modalClose);
 const searchBar = document.querySelector("#search");
 const setActive = (elm, selector) => {
     var _a;
@@ -82,14 +92,13 @@ const generateCards = (dataCardsArray) => {
         const cardContainer = document.createElement("div");
         cardContainer.classList.add("portfolio-card");
         cardContainer.setAttribute("data-item", card.dataItemAtr);
-        cardContainer.setAttribute("data-open", "web-1");
+        cardContainer.setAttribute("data-open", card.modalId);
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body");
         const img = document.createElement("img");
         img.setAttribute("src", card.imgSrc);
         img.setAttribute("alt", "portfolio icon");
-        const cardPopUpBox = document.createElement("a");
-        cardPopUpBox.setAttribute("href", "#");
+        const cardPopUpBox = document.createElement("div");
         cardPopUpBox.classList.add("card-popup-box");
         const category = document.createElement("div");
         category.innerHTML = card.category;
@@ -104,9 +113,64 @@ const generateCards = (dataCardsArray) => {
     }
 };
 generateCards(dataCardsArray);
-const openModal = document.querySelectorAll(modalOpen);
-const closeModal = document.querySelectorAll(modalClose);
 const portfolioItems = document.querySelectorAll(dataCards);
+const modalHandler = (itemId, dataTitle, url) => {
+    if (!modalArrayVisited.includes(itemId)) {
+        const modalWrapper = document.createElement("div");
+        modalWrapper.classList.add("modal");
+        modalWrapper.setAttribute("id", itemId);
+        modalWrapper.setAttribute("data-animation", "slideInOut");
+        const modalDialog = document.createElement("div");
+        modalDialog.classList.add("modal-dialog");
+        const modalHeader = document.createElement("header");
+        modalHeader.classList.add("modal-header");
+        const headerTitle = document.createElement("h3");
+        headerTitle.innerHTML = `${dataTitle === null || dataTitle === void 0 ? void 0 : dataTitle.toUpperCase()} Project`;
+        const icon = document.createElement("i");
+        icon.classList.add("fas", "fa-times");
+        icon.setAttribute("data-close", "");
+        const modalBody = document.createElement("div");
+        modalBody.classList.add("modal-body");
+        const imgWrapper = document.createElement("div");
+        imgWrapper.classList.add("img-wrapper");
+        const smallImage = document.createElement("img");
+        smallImage.setAttribute("src", url);
+        smallImage.setAttribute("alt", "portfolio Image");
+        const textWrapper = document.createElement("div");
+        textWrapper.classList.add("text-wrapper");
+        const textStrong = document.createElement("p");
+        const text2 = document.createElement("p");
+        text2.innerHTML = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+  reprehenderit eum voluptas explicabo`;
+        const text3 = document.createElement("p");
+        text3.innerHTML = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+  nam alias ratione`;
+        const strongTag = document.createElement("strong");
+        strongTag.innerHTML = `My awesome ${dataTitle} Project`;
+        modalWrapper.appendChild(modalDialog);
+        modalDialog.appendChild(modalHeader);
+        modalHeader.appendChild(headerTitle);
+        modalHeader.appendChild(icon);
+        modalDialog.appendChild(modalBody);
+        modalBody.appendChild(imgWrapper);
+        imgWrapper.appendChild(smallImage);
+        modalBody.appendChild(textWrapper);
+        textWrapper.appendChild(textStrong);
+        textStrong.appendChild(strongTag);
+        textWrapper.appendChild(text2);
+        textWrapper.appendChild(text3);
+        document.body.children[1].appendChild(modalWrapper);
+        let closeModal = document.querySelectorAll(modalClose);
+        addClosingEvents(closeModal);
+        modalArrayVisited.push(itemId);
+    }
+};
+portfolioItems.forEach((card) => {
+    card.addEventListener("click", () => {
+        modalHandler(card.getAttribute("data-open"), card.getAttribute("data-item"), card.children[0].children[0].getAttribute("src"));
+    });
+});
+const openModal = document.querySelectorAll(modalOpen);
 const setTheme = (val) => {
     if (val === dark) {
         root.setAttribute(dataTheme, dark);
@@ -182,11 +246,14 @@ for (const el of openModal) {
         (_a = document.getElementById(modalId)) === null || _a === void 0 ? void 0 : _a.classList.add(isVisible);
     });
 }
-for (const el of closeModal) {
-    el.addEventListener("click", function () {
-        this.parentElement.parentElement.parentElement.classList.remove(isVisible);
-    });
-}
+const addClosingEvents = (closeModal) => {
+    for (const el of closeModal) {
+        el.addEventListener("click", function () {
+            this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+        });
+    }
+};
+addClosingEvents(closeModal);
 document.addEventListener("click", (event) => {
     var _a;
     if (event.target === document.querySelector(".modal.is-visible")) {
