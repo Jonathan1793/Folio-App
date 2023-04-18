@@ -266,7 +266,6 @@ for (const button of switcher) {
 searchBar?.addEventListener("keyup", (event: Event) => {
   //search bar Handler
   const inputSearchValue = (event.target as HTMLInputElement).value;
-  console.log(activeButton);
   portfolioItems.forEach((card) => {
     if (card.dataset.item?.includes(inputSearchValue)) {
       card.style.display = "block";

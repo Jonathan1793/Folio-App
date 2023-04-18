@@ -484,6 +484,132 @@ button {
   color: var(--color-text-base);
 }
 
+.reviews {
+  text-align: center;
+  position: relative;
+  margin: 3rem 0;
+  overflow: hidden;
+}
+.reviews .review-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.reviews .review-preview {
+  max-width: 400px;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -3rem;
+  z-index: -1;
+  opacity: 0.5;
+}
+.reviews .review-preview img {
+  width: 100%;
+}
+
+.review-carousel {
+  display: flex;
+  justify-content: center;
+  height: 250px;
+  margin: 200px 0;
+  pointer-events: none;
+}
+.review-carousel .review-item {
+  background: var(--bg-panel);
+  color: var(--color-text-base);
+  max-width: 450px;
+  padding: 2.5rem;
+  border-radius: 24px;
+  width: 100%;
+  box-shadow: 0 22px 34px rgba(22, 28, 45, 0.8);
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.review-carousel .review-item.active {
+  transform: translate(0, -10%);
+  z-index: 10;
+  opacity: 1;
+}
+.review-carousel .review-item.prev {
+  transform: translateX(-75%);
+  opacity: 0.25;
+}
+.review-carousel .review-item.next {
+  transform: translateX(75%);
+  opacity: 0.25;
+}
+.review-carousel .review-item .review-text {
+  padding-bottom: 2.5rem;
+  text-align: left;
+}
+.review-carousel .review-item .review-author {
+  display: flex;
+  text-align: left;
+  align-items: center;
+}
+.review-carousel .review-item .review-author .avatar {
+  width: 46px;
+  height: 46px;
+  margin-right: 12px;
+}
+.review-carousel .review-item .review-author .avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+.review-carousel .review-item .review-author .review-detail .name {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.review-carousel .review-item .review-author .review-detail .company {
+  color: #6b6b6b;
+}
+
+.slide-control-container {
+  margin-top: 50px;
+}
+.slide-control-container button {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--color-text);
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.75;
+}
+.slide-control-container button:nth-child(1) {
+  padding-right: 10px;
+}
+.slide-control-container button:hover {
+  opacity: 1;
+}
+
 .page-block {
   background: var(--bg);
+}
+
+#about .modal-body {
+  margin-top: 5rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+#about .modal-body .img-wrapper {
+  flex: 1;
+  text-align: center;
+  max-width: initial;
+  margin-right: 0;
+}
+#about .modal-body .img-wrapper img {
+  max-width: 200px;
+  border-radius: 50%;
+}
+#about .modal-body .about-text {
+  flex: 1;
+}
+#about .modal-body .about-text .contact-me-block,
+#about .modal-body .about-text p {
+  font-size: 1.2rem;
 }/*# sourceMappingURL=main.css.map */

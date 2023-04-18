@@ -211,7 +211,6 @@ for (const button of switcher) {
 }
 searchBar === null || searchBar === void 0 ? void 0 : searchBar.addEventListener("keyup", (event) => {
     const inputSearchValue = event.target.value;
-    console.log(activeButton);
     portfolioItems.forEach((card) => {
         var _a;
         if ((_a = card.dataset.item) === null || _a === void 0 ? void 0 : _a.includes(inputSearchValue)) {
