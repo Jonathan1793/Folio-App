@@ -325,3 +325,21 @@ document.addEventListener("keyup", (event) => {
     document.querySelector(".modal.is-visible")?.classList.remove(isVisible);
   }
 });
+
+/* The following code is for the marquee animation on the about page */
+const elmsDisplayed = getComputedStyle(root).getPropertyValue(
+  "--marquee-elms-displayed"
+);
+
+const marqueeContent = document.querySelector("ul.marquee-content");
+
+if (marqueeContent != undefined) {
+  root.style.setProperty(
+    "--marquee-elms",
+    (marqueeContent?.children.length).toString()
+  );
+}
+
+for (let i = 0; i < parseInt(elmsDisplayed); i++) {
+  marqueeContent?.appendChild(marqueeContent.children[i].cloneNode(true));
+}

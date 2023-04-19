@@ -265,4 +265,12 @@ document.addEventListener("keyup", (event) => {
         (_a = document.querySelector(".modal.is-visible")) === null || _a === void 0 ? void 0 : _a.classList.remove(isVisible);
     }
 });
+const elmsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elms-displayed");
+const marqueeContent = document.querySelector("ul.marquee-content");
+if (marqueeContent != undefined) {
+    root.style.setProperty("--marquee-elms", (marqueeContent === null || marqueeContent === void 0 ? void 0 : marqueeContent.children.length).toString());
+}
+for (let i = 0; i < parseInt(elmsDisplayed); i++) {
+    marqueeContent === null || marqueeContent === void 0 ? void 0 : marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+}
 //# sourceMappingURL=main.js.map

@@ -1,0 +1,27 @@
+@media (max-width: 991px) {
+  #about .modal-body .img-wrapper,
+  #about .modal-body .about-text {
+    flex: initial;
+    margin: 0 auto;
+  }
+  .page-block {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --marquee-width: 100%;
+    --marquee-elms-displayed: 3;
+  }
+  .marquee::before,
+  .marquee::after {
+    width: 5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    --marquee-elms-displayed: 2;
+  }
+}
