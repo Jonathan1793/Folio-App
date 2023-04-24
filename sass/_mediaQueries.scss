@@ -24,4 +24,8 @@
   :root {
     --marquee-elms-displayed: 2;
   }
+
+  #about {
+    overflow: scroll;
+  }
 }
