@@ -1,299 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/css/main.css" />
 
-    <title>Folio</title>
-  </head>
-  <body>
-    <div class="theme-panel open">
-      <div class="theme-body">
-        <span>Change Theme</span>
-        <div class="btn-group">
-          <button data-toggle="light" class="switcher-btn">Light</button>
-          <button data-toggle="dark" class="switcher-btn">Dark</button>
-        </div>
-        <button class="theme-tab">
-          <i class="fas fa-chevron-left"></i>
-        </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/main.css" />
+
+  <title>Jonathan Ruiz</title>
+</head>
+
+<body>
+  <div class="theme-panel open">
+    <div class="theme-body">
+      <span>Change Theme</span>
+      <div class="btn-group">
+        <button data-toggle="light" class="switcher-btn">Light</button>
+        <button data-toggle="dark" class="switcher-btn">Dark</button>
       </div>
+      <button class="theme-tab">
+        <i class="fas fa-chevron-left"></i>
+      </button>
     </div>
-    <main class="side-wrapper">
-      <header class="side-header">
-        <nav class="navbar">
-          <div class="brand-logo">
-            <a href="/"><h2>Folio.</h2></a>
-          </div>
-          <div class="navbar-nav">
-            <ul class="ul-default-none main-menu">
-              <li class="nav-item">Home</li>
-              <li class="nav-item" data-open="about">About Me</li>
-              <li class="nav-item" data-open="contact">Contact</li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-
-      <!-- Hero Section  -->
-      <section class="hero-bg">
-        <div class="container">
-          <div class="hero-content">
-            <div class="code-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <h2 class="header-lg">Code. Eat. Sleep</h2>
-            <div class="sub-header">
-              I create meaningful solution for your brands and products.
-              <br />
-              Give your customer the best experience possible.
-            </div>
-            <div class="btn btn-primary round-pill">
-              <a href="#" data-open="contact">let's talk now</a>
-            </div>
-          </div>
+  </div>
+  <main class="side-wrapper">
+    <header class="side-header">
+      <nav class="navbar">
+        <div class="brand-logo">
+          <a href="/">
+            <h2>Folio.</h2>
+          </a>
         </div>
-      </section>
-
-      <section class="portfolio-section">
-        <div class="search-container container">
-          <label for="search">
-            <input
-              class="search-input"
-              placeholder="search"
-              autocomplete="off"
-              type="text"
-              name="search"
-              id="search"
-            />
-            <i class="fas fa-search"></i>
-          </label>
-          <ul class="ul-default-none portfolio-filter-nav">
-            <li data-filter="all" class="filter-link active">All Work</li>
-            <li data-filter="web" class="filter-link">Web Development</li>
-            <li data-filter="app" class="filter-link">App Development</li>
-            <li data-filter="ui" class="filter-link">UI Design</li>
+        <div class="navbar-nav">
+          <ul class="ul-default-none main-menu">
+            <li class="nav-item">Home</li>
+            <li class="nav-item" data-open="about">About Me</li>
+            <li class="nav-item" data-open="contact">Contact</li>
           </ul>
         </div>
+      </nav>
+    </header>
 
-        <div class="portfolio-grid"></div>
-        <!-- it gets the cards from JS main -->
-      </section>
-
-      <section class="reviews">
-        <div class="review-title">what people say</div>
-        <h2 class="header-md">Trusted by clients.</h2>
-        <div class="review-preview">
-          <img
-            src="https://media.discordapp.net/attachments/1098447973702172732/1098448125062021201/cube.png"
-            alt="cube"
-          />
-        </div>
-
-        <div class="review-carousel">
-          <div class="review-item">
-            <div class="review-text">
-              #1 Folio Designer is a clean and creative landing Page Lorem ipsum
-              dolor sit amet consectetur,
-            </div>
-            <div class="review-author">
-              <div class="avatar">
-                <img
-                  src="https://media.discordapp.net/attachments/1098447973702172732/1098448124827152495/ava-1.jpg"
-                  alt="avatar"
-                />
-              </div>
-              <div class="review-detail">
-                <div class="name">Jonathan Ruiz</div>
-                <div class="company">ComputerShare</div>
-              </div>
-            </div>
+    <!-- Hero Section  -->
+    <section class="hero-bg">
+      <div class="container">
+        <div class="hero-content">
+          <div class="code-icon">
+            <i class="fas fa-code"></i>
           </div>
-          <div class="review-item">
-            <div class="review-text">
-              #2 Folio Designer is a clean and creative landing Page Lorem ipsum
-              dolor sit amet consectetur,
-            </div>
-            <div class="review-author">
-              <div class="avatar">
-                <img
-                  src="https://media.discordapp.net/attachments/1098447973702172732/1098448124827152495/ava-1.jpg"
-                  alt="avatar"
-                />
-              </div>
-              <div class="review-detail">
-                <div class="name">Carol Leon</div>
-                <div class="company">Montrer</div>
-              </div>
-            </div>
+          <h2 class="header-lg">Code. Eat. Sleep</h2>
+          <div class="sub-header">
+            I create meaningful solution for your brands and products.
+            <br />
+            Give your customer the best experience possible.
           </div>
-          <div class="review-item">
-            <div class="review-text">
-              #3 Folio Designer is a clean and creative landing Page Lorem ipsum
-              dolor sit amet consectetur,
-            </div>
-            <div class="review-author">
-              <div class="avatar">
-                <img
-                  src="https://media.discordapp.net/attachments/1098447973702172732/1098448124827152495/ava-1.jpg"
-                  alt="avatar"
-                />
-              </div>
-              <div class="review-detail">
-                <div class="name">Julio Salinas</div>
-                <div class="company">Cinepolis</div>
-              </div>
-            </div>
-          </div>
-          <div class="review-item">
-            <div class="review-text">
-              #4 Folio Designer is a clean and creative landing Page Lorem ipsum
-              dolor sit amet consectetur,
-            </div>
-            <div class="review-author">
-              <div class="avatar">
-                <img
-                  src="https://media.discordapp.net/attachments/1098447973702172732/1098448124827152495/ava-1.jpg"
-                  alt="avatar"
-                />
-              </div>
-              <div class="review-detail">
-                <div class="name">john doe</div>
-                <div class="company">Small World</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide-control-container">
-          <button>
-            <i class="fas fa-arrow-left"></i>
-          </button>
-          <button>
-            <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </section>
-
-      <!-- Modals -->
-      <!-- About Page Models  -->
-      <div
-        id="about"
-        class="full-site-modal page-block"
-        data-animation="zoomInOut"
-      >
-        <div class="container-fluid">
-          <header class="modal-header">
-            <h3>ABOUT PAGE</h3>
-            <i class="fas fa-times" data-close></i>
-          </header>
-          <div class="modal-body">
-            <div class="img-wrapper">
-              <img
-                src="https://media.discordapp.net/attachments/338420746810425344/1098437853362536519/me.jpg?width=670&height=671"
-                alt="head shot"
-              />
-            </div>
-            <div class="about-text">
-              <h2 class="header-md">Jonathan Ruiz</h2>
-              <p>
-                Frontend Developer based in Minnesota, USA, nobody can see how
-                elegant my code is... so I snapshot it, frame it and hang it on
-                my wall
-              </p>
-              <p>
-                I write code like I diet - lean. jk. it's more like a Chipotle
-                extra chicken full extra guacamole burrito bowl... which is
-                still leaner than some other foods
-              </p>
-              <div>
-                <div class="contact-me-block">Email Me:</div>
-                <a href="mailto:Jonathan.ruiz.1793@gmail.com"
-                  >Jonathan.ruiz.1793@gmail.com</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="marquee">
-            <ul class="marquee-content">
-              <li><i class="fab fa-github"></i></li>
-              <li><i class="fab fa-codepen"></i></li>
-              <li><i class="fab fa-dev"></i></li>
-              <li><i class="fab fa-react"></i></li>
-              <li><i class="fab fa-vuejs"></i></li>
-              <li><i class="fab fa-angular"></i></li>
-              <li><i class="fab fa-node"></i></li>
-              <li><i class="fab fa-docker"></i></li>
-              <li><i class="fab fa-android"></i></li>
-            </ul>
+          <div class="btn btn-primary round-pill">
+            <a href="#" data-open="contact">let's talk now</a>
           </div>
         </div>
       </div>
-      <!-- Contact Modal  -->
-      <div
-        id="contact"
-        class="full-site-modal page-block"
-        data-animation="zoomInOut"
-      >
-        <div class="container-fluid">
-          <header class="modal-header">
-            <h3>Contact Page</h3>
-            <i class="fas fa-times" data-close></i>
-          </header>
-          <div class="modal-body">
-            <div class="contact-text">
-              <h2 class="header-md">Jonathan Ruiz</h2>
-              <div>have a project or question? Send me a message</div>
-              <div>I will replay within 48 hours.</div>
+    </section>
+
+    <section class="portfolio-section">
+      <div class="search-container container">
+        <label for="search">
+          <input class="search-input" placeholder="search" autocomplete="off" type="text" name="search" id="search" />
+          <i class="fas fa-search"></i>
+        </label>
+        <ul class="ul-default-none portfolio-filter-nav">
+          <li data-filter="all" class="filter-link active">All Work</li>
+          <li data-filter="web" class="filter-link">Web Development</li>
+          <li data-filter="app" class="filter-link">App Development</li>
+          <li data-filter="ui" class="filter-link">UI Design</li>
+        </ul>
+      </div>
+
+      <div class="portfolio-grid"></div>
+      <!-- it gets the cards from JS main -->
+    </section>
+
+    <section class="reviews">
+      <div class="review-title">what people say</div>
+      <h2 class="header-md">Trusted by clients.</h2>
+      <div class="review-preview">
+        <img src="../assets/images/cube.png" alt="cube" />
+      </div>
+
+      <div class="review-carousel">
+        <div class="review-item">
+          <div class="review-text">
+            #1 This product exceeded my expectations! Easy to use and incredibly effective. Highly recommend to anyone
+            looking for quality and reliability.
+          </div>
+          <div class="review-author">
+            <div class="avatar">
+              <img src="../assets/images/img3.jpg" alt="avatar" />
             </div>
-            <form action="" class="folio-form">
-              <input
-                class="form-control"
-                name="name"
-                type="text"
-                placeholder="Name"
-              />
-              <input
-                class="form-control"
-                name="email"
-                type="email"
-                placeholder="Email"
-              />
-              <input
-                class="form-control"
-                name="subject"
-                type="text"
-                placeholder="Subject"
-              />
-              <textarea
-                name="message"
-                id="message"
-                cols="30"
-                rows="3"
-                placeholder="Write your message..."
-                class="form-control"
-              ></textarea>
-              <input
-                type="submit"
-                value="Send"
-                class="btn btn-primary round-pill"
-              />
-            </form>
+            <div class="review-detail">
+              <div class="name">Jonathan Ruiz</div>
+              <div class="company">ComputerShare</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-item">
+          <div class="review-text">
+            #2 Absolutely thrilled with his service! the customer service is top-notch. Five
+            stars all the way,
+          </div>
+          <div class="review-author">
+            <div class="avatar">
+              <img src="../assets/images/img2.jpg" alt="avatar" />
+            </div>
+            <div class="review-detail">
+              <div class="name">Carol Leon</div>
+              <div class="company">Montrer</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-item">
+          <div class="review-text">
+            #3 A game-changer for my daily routine. Simple, efficient, and worth every penny. Can't recommend it enough,
+          </div>
+          <div class="review-author">
+            <div class="avatar">
+              <img src="../assets/images/img4.jpg" alt="avatar" />
+            </div>
+            <div class="review-detail">
+              <div class="name">Julio Salinas</div>
+              <div class="company">Cinepolis</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-item">
+          <div class="review-text">
+            #4 Incredible value for the price! User-friendly and delivers exactly as promised. I'll definitely be back
+            for more.
+          </div>
+          <div class="review-author">
+            <div class="avatar">
+              <img src="../assets/images/img5.jpg" alt="avatar" />
+            </div>
+            <div class="review-detail">
+              <div class="name">john doe</div>
+              <div class="company">Small World</div>
+            </div>
           </div>
         </div>
       </div>
+      <div class="slide-control-container">
+        <button>
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <button>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </section>
 
-      <!-- Pop Up Modals -->
-    </main>
-    <script src="/js//main.js"></script>
-    <script src="/js/carousel.js"></script>
-  </body>
+    <!-- Modals -->
+    <!-- About Page Models  -->
+    <div id="about" class="full-site-modal page-block" data-animation="zoomInOut">
+      <div class="container-fluid">
+        <header class="modal-header">
+          <h3>ABOUT PAGE</h3>
+          <i class="fas fa-times" data-close></i>
+        </header>
+        <div class="modal-body">
+          <div class="img-wrapper">
+            <img src="../assets/images/me.jpg" alt="head shot" />
+          </div>
+          <div class="about-text">
+            <h2 class="header-md">Jonathan Ruiz</h2>
+            <p>
+              Frontend Developer based in Minnesota, USA, nobody can see how
+              elegant my code is... so I snapshot it, frame it and hang it on
+              my wall
+            </p>
+            <p>
+              I write code like I diet - lean. jk. it's more like a Chipotle
+              extra chicken full extra guacamole burrito bowl... which is
+              still leaner than some other foods
+            </p>
+            <div>
+              <div class="contact-me-block">Email Me:</div>
+              <a href="mailto:Jonathan.ruiz.1793@gmail.com">Jonathan.ruiz.1793@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="marquee">
+          <ul class="marquee-content">
+            <li><i class="fab fa-github"></i></li>
+            <li><i class="fab fa-codepen"></i></li>
+            <li><i class="fab fa-dev"></i></li>
+            <li><i class="fab fa-react"></i></li>
+            <li><i class="fab fa-vuejs"></i></li>
+            <li><i class="fab fa-angular"></i></li>
+            <li><i class="fab fa-node"></i></li>
+            <li><i class="fab fa-docker"></i></li>
+            <li><i class="fab fa-android"></i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Modal  -->
+    <div id="contact" class="full-site-modal page-block" data-animation="zoomInOut">
+      <div class="container-fluid">
+        <header class="modal-header">
+          <h3>Contact Page</h3>
+          <i class="fas fa-times" data-close></i>
+        </header>
+        <div class="modal-body">
+          <div class="contact-text">
+            <h2 class="header-md">Jonathan Ruiz</h2>
+            <div>have a project or question? Send me a message</div>
+            <div>I will replay within 48 hours.</div>
+          </div>
+          <form action="" class="folio-form">
+            <input class="form-control" name="name" type="text" placeholder="Name" />
+            <input class="form-control" name="email" type="email" placeholder="Email" />
+            <input class="form-control" name="subject" type="text" placeholder="Subject" />
+            <textarea name="message" id="message" cols="30" rows="3" placeholder="Write your message..."
+              class="form-control"></textarea>
+            <input type="submit" value="Send" class="btn btn-primary round-pill" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop Up Modals -->
+  </main>
+  <script src="/js//main.js"></script>
+  <script src="/js/carousel.js"></script>
+</body>
+
 </html>
