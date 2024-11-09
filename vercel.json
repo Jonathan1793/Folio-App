@@ -1,0 +1,23 @@
+{
+  "builds": [
+    {
+      "src": "script.php",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/send_email",
+      "dest": "/script.php"
+    },
+    {
+      "src": "/(*)",
+      "dest": "/index.html"
+    }
+  ],
+  "buildCommand": "composer install"
+}

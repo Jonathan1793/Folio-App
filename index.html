@@ -234,6 +234,35 @@
   </main>
   <script src="/js//main.js"></script>
   <script src="/js/carousel.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(() => {
+      $('.folio-form').on('submit', (event) => {
+        event.preventDefault();
+        console.log('we are here');
+
+        let formData = {
+          name: $('[name="name"]').val(),
+          email: $('[name="email"]').val(),
+          subject: $('[name="subject"]').val(),
+          message: $('#message').val()
+        };
+        $.ajax({
+          url: '/send_email',
+          type: 'POST',
+          data: formData,
+          success: (response) => {
+            console.log('we sent data correctly');
+            $('.folio-form')[0].reset();
+          },
+          error: () => {
+            alert('There was an error with handling the data');
+          }
+        });
+      });
+    })
+  </script>
 </body>
 
 </html>
