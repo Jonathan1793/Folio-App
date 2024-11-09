@@ -2,7 +2,7 @@
   "builds": [
     {
       "src": "script.php",
-      "use": "@vercel/php"
+      "use": "@vercel/node"
     },
     {
       "src": "index.html",
