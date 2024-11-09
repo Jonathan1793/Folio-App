@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $mail->send();
         echo 'Message has been sent';
     } catch (Exception $e) {
+        error_log("Mailer error: {$mail->ErrorInfo}");
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 } else {

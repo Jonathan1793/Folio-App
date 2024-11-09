@@ -1,8 +1,9 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "script.php",
-      "use": "@vercel/node"
+      "use": "@vercel/php"
     },
     {
       "src": "index.html",
