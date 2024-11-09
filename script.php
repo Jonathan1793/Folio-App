@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     try {
         //server settings
-        #$mail->SMTPDebug = 3;
         $mail->isSMTP();
         $mail->Host = 'smtp.sendgrid.net';
         $mail->SMTPAuth = true;

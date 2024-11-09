@@ -15,7 +15,7 @@
       "dest": "/script.php"
     },
     {
-      "src": "/(*)",
+      "src": "/(.*)",
       "dest": "/index.html"
     }
   ],
