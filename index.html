@@ -249,7 +249,7 @@
           message: $('#message').val()
         };
         $.ajax({
-          url: '/send_email',
+          url: 'https://folio-app-seven.vercel.app/api/script.php',
           type: 'POST',
           data: formData,
           success: (response) => {
